@@ -43,7 +43,7 @@ def get_best_answer(user_question, data, answer_type="short", subject="science")
         q_text = item.get("question", "").lower()
         score = 0
         
-        # Better similarity
+        # Better similarity for better matching from the csv file.
         if user_q_clean in q_text or q_text in user_q_clean:
             score += 10
         score += len(set(user_q_clean.split()) & set(q_text.split())) * 2
